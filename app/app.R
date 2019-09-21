@@ -3,7 +3,7 @@ library(dplyr)
 library(ggplot2)
 
 path = getwd()
-pathShiny = "/app/src/shiny"
+pathShiny = "/src/shiny"
 
 source(paste0(path,pathShiny,"/server/server.R"))
 source(paste0(path,pathShiny,"/ui/ui.R"))
