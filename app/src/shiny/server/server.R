@@ -10,7 +10,7 @@ server = function(input, output) {
         data = read.csv(infile$datapath,stringsAsFactors = FALSE)
     })
     
-    output$value = renderPrint({input$select})
+    output$value = renderPrint({input$db_select})
     
     # observeEvent(input$db_select)
     

@@ -84,22 +84,18 @@ ui = fluidPage(
                 
                 tabPanel("Data summary",
                          br(),
-                         tableOutput('Data summary')),
+                         tableOutput('summaryOut')),
                 
-                tabPanel("Decomposed Time Series Data",
+                tabPanel("test01",
                          br(),
-                         plotOutput('decomposedOut')),
+                         plotOutput('out001')),
                 
-                tabPanel("Detected Walking Pattern",
+                tabPanel("test02",
                          br(),
-                         plotOutput('walkingPattern')),
-                
-                
-                tabPanel("Re -Clustering Data",
-                         br(),
-                         plotOutput("reclustering")),
-                
-                tabPanel("Result",
+                         plotOutput('out001')),
+
+                                
+                tabPanel("test03",
                          br(),
                          textOutput('result'),
                          plotOutput('pieChart'),

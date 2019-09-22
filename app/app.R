@@ -12,4 +12,8 @@ source(paste0(path,pathShiny,"/server/server.R"))
 source(paste0(path,pathShiny,"/ui/ui.R"))
 source(paste0(path,pathUtil,"/dbUtils.R"))
 
-shinyApp(ui = ui, server = server)
+# shinyApp(ui = ui, server = server)
+
+
+#default port 8833(modified)
+app = shinyApp(ui=ui, server=server)
