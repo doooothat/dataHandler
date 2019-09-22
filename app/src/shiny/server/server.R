@@ -7,19 +7,12 @@ server = function(input, output) {
         
         infile = input$file
         if (is.null(infile)){return(NULL)}
-        
         data = read.csv(infile$datapath,stringsAsFactors = FALSE)
-        
-        print(length(data[12,]))
-        
-        if (isTRUE(data[1,2])){return (data)}
-        
-        else {
-            data = read.csv(infile$datapath,stringsAsFactors = FALSE,skip = 10) 
-            return (data)
-        }
-        
     })
+    
+    output$value = renderPrint({input$select})
+    
+    # observeEvent(input$db_select)
     
     observeEvent(input$calculate,{
         input$date

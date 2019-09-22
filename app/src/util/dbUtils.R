@@ -15,7 +15,7 @@ library(DBI)
 
 
 
-orclConnect = function(ip,db,user,passwd){
+orclConnect = function(ip,db,port,user,passwd){
     
     path = getwd()
     
@@ -43,7 +43,7 @@ orclConnect = function(ip,db,user,passwd){
 
 # tmp = orclConnect("192.168.0.10","set001","wd","wd")
 
-mariaConnect = function(ip,db,user,passwd){
+mariaConnect = function(ip,db,port,user,passwd){
     
     path = getwd()
     
@@ -72,7 +72,7 @@ mariaConnect = function(ip,db,user,passwd){
 
 # tmp = mariaConnect("192.168.0.6","set001","wd","wd")
 
-impalaConnect = function(ip,db){
+impalaConnect = function(ip,db,port){
     
     path = getwd()
     

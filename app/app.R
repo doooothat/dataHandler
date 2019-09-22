@@ -1,4 +1,6 @@
+if (!require(shiny)) install.packages("shiny")
 library(shiny)
+
 library(dplyr)
 library(ggplot2)
 

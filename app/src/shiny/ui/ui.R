@@ -3,7 +3,7 @@ library(shiny)
 
 ui = fluidPage(
     
-    titlePanel("test"),
+    titlePanel("data Handler"),
     
     br(),
     
@@ -18,38 +18,61 @@ ui = fluidPage(
                       accept=c('text/csv', 'text/comma-separated-values,text/plain','.csv'),
                       placeholder = "No file"),
             
+            # hr(),
+
+            selectInput("db_select",
+                        label = h4("select database"),
+                        choices = list("oracle"="orclConnect",
+                                       "mariaDB"="mariaConnect",
+                                       "impala"="impalaConnect")),
+            # hr(),
+            # fluidRow(column(3, verbatimTextOutput("value"))),
+            
+            textInput('ip',
+                      'ip',
+                      placeholder = "192.168.0.6"),
+            
+            textInput('port',
+                      'port',
+                      placeholder = "3306"),
+            
+            textInput('DB name',
+                      'db',
+                      placeholder = "test"),
+            
+            textInput('user',
+                      'user',
+                      placeholder = "user"),
+
+            passwordInput('passwd',
+                          'passwd'
+                          ),
+
+            actionButton('connect_database', 'connect'),
+
+            # checkboxInput('fullTime',
+            #               'fullTime',
+            #               FALSE),
+            
             hr(),
-            textInput('startTime',
-                      ' startTime',
-                      placeholder = "ex) 15:00:00"),
+            # numericInput('frequency_rate',
+            #              'frequency_rate',
+            #              10),
             
-            textInput('endTime',
-                      'endTime',
-                      placeholder = "ex) 16:00:00"),
+            # numericInput('select_column',
+            #              'select_column',
+            #              5,
+            #              min = 1,
+            #              max = 5,
+            #              step = 1),
             
-            checkboxInput('fullTime',
-                          'fullTime',
-                          FALSE),
-            
-            hr(),
-            numericInput('frequency_rate',
-                         'frequency_rate',
-                         10),
-            
-            numericInput('select_column',
-                         'select_column',
-                         5,
-                         min = 1,
-                         max = 5,
-                         step = 1),
-            
-            numericInput('paa_rate',
-                         'paa_rate',
-                         100),
-            
+            # numericInput('paa_rate',
+            #              'paa_rate',
+            #              100),
+            # 
             
             actionButton('calculate', 'calculate'),
-            
+
             br()
         ),
         
@@ -59,9 +82,9 @@ ui = fluidPage(
                 
                 type = "tabs",
                 
-                tabPanel("Data Check",
+                tabPanel("Data summary",
                          br(),
-                         tableOutput('dataCheck')),
+                         tableOutput('Data summary')),
                 
                 tabPanel("Decomposed Time Series Data",
                          br(),
